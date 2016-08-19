@@ -21,9 +21,11 @@ class FatherView: UIView {
                 if let result = subview.hitTest(subPoint, withEvent: event) {
                     
                     if result.isKindOfClass(ChildView1) {
+                        print("view 1")
                         return result
                     }
                     if result.isKindOfClass(ChildView2) {
+                        print("view 2")
                         return result
                     }
                 }

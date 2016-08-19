@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let father = FatherView()
     let child1 = ChildView1()
     let child2 = ChildView2()
+    let child3 = ChildView2()
     
     
     override func viewDidLoad() {
@@ -21,21 +22,27 @@ class ViewController: UIViewController {
         father.frame = CGRectMake(0, 0, 100, 100)
         child1.frame = CGRectMake(20, 20, 20, 20)
         child2.frame = CGRectMake(120, 120, 120, 120)
+        child3.frame = CGRectMake(200, 200, 120, 120)
         
 //        father.clipsToBounds = true
         father.backgroundColor = UIColor.grayColor()
         child1.backgroundColor = UIColor.redColor()
         child2.backgroundColor = UIColor.blueColor()
+        child3.backgroundColor = UIColor.greenColor()
         
         view.addSubview(father)
         father.addSubview(child1)
         father.addSubview(child2)
+        father.addSubview(child3)
         
         child1.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(touchTest1)))
         
         child2.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(touchTest2)))
+        
+        child3.addGestureRecognizer(
+            UITapGestureRecognizer(target: self, action: #selector(touchTest3)))
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,11 +50,15 @@ class ViewController: UIViewController {
     }
     
     func touchTest1() {
-        print("test 1")
+        print("test 1\n")
     }
     
     func touchTest2() {
-        print("test 2")
+        print("test 2\n")
+    }
+    
+    func touchTest3() {
+        print("test 3\n")
     }
 
 }
