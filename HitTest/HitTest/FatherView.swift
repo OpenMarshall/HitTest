@@ -17,16 +17,14 @@ class FatherView: UIView {
         
         if (self.hidden == false) && (alpha > 0) {            
             for subview in subviews {
-                let subPoint = subview.convertPoint(point, fromView: self)
-                if let result = subview.hitTest(subPoint, withEvent: event) {
-                    
-                    if result.isKindOfClass(ChildView1) {
+                if CGRectContainsPoint(subview.frame, point) {
+                    if subview.isKindOfClass(ChildView1) {
                         print("view 1")
-                        return result
+                        return subview
                     }
-                    if result.isKindOfClass(ChildView2) {
+                    if subview.isKindOfClass(ChildView2) {
                         print("view 2")
-                        return result
+                        return subview
                     }
                 }
             }
