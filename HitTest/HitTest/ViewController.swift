@@ -19,16 +19,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        father.frame = CGRectMake(0, 0, 100, 100)
-        child1.frame = CGRectMake(20, 20, 20, 20)
-        child2.frame = CGRectMake(120, 120, 120, 120)
-        child3.frame = CGRectMake(200, 200, 120, 120)
+        father.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        child1.frame = CGRect(x: 20, y: 20, width: 20, height: 20)
+        child2.frame = CGRect(x: 120, y: 120, width: 120, height: 120)
+        child3.frame = CGRect(x: 200, y: 200, width: 120, height: 120)
         
 //        father.clipsToBounds = true
-        father.backgroundColor = UIColor.grayColor()
-        child1.backgroundColor = UIColor.redColor()
-        child2.backgroundColor = UIColor.blueColor()
-        child3.backgroundColor = UIColor.greenColor()
+        father.backgroundColor = UIColor.gray
+        child1.backgroundColor = UIColor.red
+        child2.backgroundColor = UIColor.blue
+        child3.backgroundColor = UIColor.green
         
         view.addSubview(father)
         father.addSubview(child1)

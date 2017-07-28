@@ -11,18 +11,18 @@ import UIKit
 class FatherView: UIView {
 
     
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         
         print("Detect Touch Event")
         
-        if (self.hidden == false) && (alpha > 0) {            
+        if (self.isHidden == false) && (alpha > 0) {            
             for subview in subviews {
-                if CGRectContainsPoint(subview.frame, point) {
-                    if subview.isKindOfClass(ChildView1) {
+                if subview.frame.contains(point) {
+                    if subview.isKind(of: ChildView1.self) {
                         print("view 1")
                         return subview
                     }
-                    if subview.isKindOfClass(ChildView2) {
+                    if subview.isKind(of: ChildView2.self) {
                         print("view 2")
                         return subview
                     }
